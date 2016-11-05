@@ -11,7 +11,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 gem 'execjs'
 
-gem 'simple_form', '~> 3.3', '>= 3.3.1'
+#gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'friendly_id', '~> 5.1.0'
