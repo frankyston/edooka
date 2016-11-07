@@ -19,7 +19,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-
+  #gem 'pry'
+  #gem 'pry-debugger'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers'
   gem 'capybara'
