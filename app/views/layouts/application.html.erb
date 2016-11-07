@@ -6,13 +6,30 @@
     <%= stylesheet_link_tag    'application'%>
     <%= javascript_include_tag 'application'%>
   </head>
-
   <body>
-  
+
+  <header class="container">
+	<nav class="navbar navbar-light bg-faded">
+  		<div class='container'>
+   	 		<a class='navbar-brand' href='/'>
+      			Edoo<span class='light'>Ka</span>
+    		</a>
+    		<ul class="nav navbar-nav pull-sm-right hidden-xs-down float-xs-right">
+      			<li class="nav-item">
+        			<%= link_to 'Create Account', new_account_path, class: "btn btn-outline-success" %>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+  </header>
+
+  <div class="container">
     <% flash.each do |name, msg| %>
     	<%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
-
-    <%= yield %>
+    <div class="row">
+    	<%= yield %>
+    </div>
+  </div>
   </body>
 </html>
