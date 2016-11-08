@@ -7,6 +7,8 @@ require 'rspec/rails'
 require 'capybara/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
+Capybara.app_host = 'http://example.com'
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
@@ -22,5 +24,12 @@ RSpec.configure do |config|
     
   config.infer_spec_type_from_file_location!
 
+  config.include Rails.application.routes.url_helpers
+
   config.filter_rails_from_backtrace!
+
+  config.after(:each) do
+  	Apartment::Tenant.reset
+  	#drop_schemas
+  end
 end
