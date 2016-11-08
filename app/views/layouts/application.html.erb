@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Edooka - Building schools</title>
+    <title>Edooka - Online schools</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application'%>
     <%= javascript_include_tag 'application'%>
@@ -19,14 +19,19 @@
         			<%= link_to 'Create Account', new_account_path, class: "btn btn-outline-success" %>
       			</li>
     		</ul>
+        <ul class="nav navbar-nav pull-sm-right hidden-xs-down float-xs-right">
+            <li class="nav-item">
+            <%if user_signed_in? %>
+              <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+            <% end %>
+            </li>
+        </ul>
   		</div>
 	</nav>
   </header>
 
   <div class="container">
-    <% flash.each do |name, msg| %>
-    	<%= content_tag :div, msg, :id => "flash_#{name}" %>
-    <% end %>
+    <%= flash_messages if show_layout_flash? %>
     <div class="row">
     	<%= yield %>
     </div>
