@@ -11,6 +11,9 @@ class SubdomainBlank
 end
 
 Rails.application.routes.draw do
+  resources :students
+  resources :courses
+
   constraints(SubdomainPresent) do
     devise_for :users
     root 'courses#index', as: :subdomain_root

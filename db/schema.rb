@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107134026) do
+ActiveRecord::Schema.define(version: 20161109010855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,35 @@ ActiveRecord::Schema.define(version: 20161107134026) do
     t.text     "pitch"
     t.string   "subdomain"
     t.integer  "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.integer  "duration"
+    t.integer  "account_id"
+    t.integer  "active_students"
+    t.decimal  "price"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "enrolls", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_enrolls_on_course_id", using: :btree
+    t.index ["student_id"], name: "index_enrolls_on_student_id", using: :btree
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

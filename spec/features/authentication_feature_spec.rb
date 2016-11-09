@@ -30,7 +30,7 @@ describe 'user authentication' do
 	end
 
 	it 'allows user to sign out' do
-		sign_user_in(user, subdomain: account.subdomain)
+		#sign_user_in(user, subdomain: account.subdomain)
 
 		click_link 'Sign out'
 		#expect(page).to have_content('Signed out successfully')

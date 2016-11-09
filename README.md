@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+IMPORTANTE: para funcionar com subdominios é preciso subir a aplicação em um Local Virtual Host, assim: lvm.me:3000 depois de criado uma conta ficará seu_subdominio.lvh.me:3000
 
-Things you may want to cover:
+1 - usuário cria uma conta (escola) com subdominio
+2 - Será redirecionado para subdominio.lvh:me:3000/users/sign_in
+3 - Entrará com as credenciais  e dentro de subdominio.lvh:3000 poderá criar cursos e matricular alunos
 
-* Ruby version
+Infelizmente por falta de tempo não pude terminar a parte de de curso e estudantes, mas fiz toda a lógica e relacionamentos entre tabelas.
 
-* System dependencies
+Nos testes ficaram 7 falhas e duas pendencias que nao deu tempo resolver
 
-* Configuration
+Obrigado pela oportunidade.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+o/

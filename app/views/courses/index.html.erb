@@ -1,3 +1,24 @@
-<div class="col-md-12">
-	<div class="well">Hello! Now you can create new courses</div>
-</div>
+<p id="notice"><%= notice %></p>
+
+<h1>Our Courses</h1>
+
+
+    <% @courses.each do |course| %>
+      <div class="col-xs-12 .col-md-8">
+        <%= course.title %>
+        <%= course.description %>
+        <%= course.content %>
+        <%= course.duration %>
+        <%= course.account_id %>
+        <%= course.active_students %>
+        <%= course.price %>
+        <%= link_to 'Show', course %>
+        <%= link_to 'Edit', edit_course_path(course) %>
+        <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Enroll to this course', new_student_path, class: 'btn btn-outline-success' %>
+      </div> 
+    <% end %>
+
+
+
+<%= link_to 'New Course', new_course_path %>

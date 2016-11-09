@@ -2,6 +2,7 @@ class Account < ApplicationRecord
 	RESTRICTED_SUBDOMAINS = %w(www)
 
 	belongs_to :owner, class_name: 'User'
+  has_many :courses
 
 	validates :owner, presence: true
 	validates :subdomain, presence: true,
